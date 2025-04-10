@@ -45,6 +45,7 @@ pub fn serialize_transform(
 ) -> Result<(), io::Error> {
     writer.write_all(b"v0\n\n")?;
 
+    writer.write_all(b"translation:\n")?;
     writer.write_all(transform.translation.x.to_string().as_bytes())?;
     writer.write_all(b"\n")?;
     writer.write_all(transform.translation.y.to_string().as_bytes())?;
@@ -52,6 +53,7 @@ pub fn serialize_transform(
     writer.write_all(transform.translation.z.to_string().as_bytes())?;
     writer.write_all(b"\n\n")?;
 
+    writer.write_all(b"rotation:\n")?;
     writer.write_all(transform.rotation.x.to_string().as_bytes())?;
     writer.write_all(b"\n")?;
     writer.write_all(transform.rotation.y.to_string().as_bytes())?;
@@ -61,6 +63,7 @@ pub fn serialize_transform(
     writer.write_all(transform.rotation.w.to_string().as_bytes())?;
     writer.write_all(b"\n\n")?;
 
+    writer.write_all(b"scale:\n")?;
     writer
         .write_all(transform.scale.x.to_string().as_bytes())
         .unwrap();
@@ -99,6 +102,7 @@ pub fn deserialize_transform(
     }
 
     lines.next().ok_or(WhereWasIParseError::expected_line())??;
+    lines.next().ok_or(WhereWasIParseError::expected_line())??;
 
     let translation = Vec3::new(
         next_float(&mut lines)?,
@@ -106,6 +110,7 @@ pub fn deserialize_transform(
         next_float(&mut lines)?,
     );
 
+    lines.next().ok_or(WhereWasIParseError::expected_line())??;
     lines.next().ok_or(WhereWasIParseError::expected_line())??;
 
     let rotation = Vec4::new(
@@ -115,6 +120,7 @@ pub fn deserialize_transform(
         next_float(&mut lines)?,
     );
 
+    lines.next().ok_or(WhereWasIParseError::expected_line())??;
     lines.next().ok_or(WhereWasIParseError::expected_line())??;
 
     let scale = Vec3::new(
