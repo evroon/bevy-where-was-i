@@ -64,17 +64,11 @@ pub fn serialize_transform(
     writer.write_all(b"\n\n")?;
 
     writer.write_all(b"scale:\n")?;
-    writer
-        .write_all(transform.scale.x.to_string().as_bytes())
-        .unwrap();
+    writer.write_all(transform.scale.x.to_string().as_bytes())?;
     writer.write_all(b"\n")?;
-    writer
-        .write_all(transform.scale.y.to_string().as_bytes())
-        .unwrap();
+    writer.write_all(transform.scale.y.to_string().as_bytes())?;
     writer.write_all(b"\n")?;
-    writer
-        .write_all(transform.scale.z.to_string().as_bytes())
-        .unwrap();
+    writer.write_all(transform.scale.z.to_string().as_bytes())?;
     writer.write_all(b"\n")?;
 
     Ok(())
