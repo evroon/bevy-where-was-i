@@ -23,6 +23,14 @@ pub struct WhereWasIPlugin {
     pub directory: String,
 }
 
+impl Default for WhereWasIPlugin {
+    fn default() -> Self {
+        Self {
+            directory: "./assets/saves".into(),
+        }
+    }
+}
+
 impl Plugin for WhereWasIPlugin {
     fn build(&self, app: &mut App) {
         app.insert_resource(WhereWasIConfig {

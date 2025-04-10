@@ -12,7 +12,7 @@ fn main() {
     App::new()
         .add_plugins(PanOrbitCameraPlugin)
         .add_plugins(WhereWasIPlugin {
-            directory: "./saves".into(),
+            directory: "./assets/saves/3d_scene".into(),
         })
         .add_plugins(DefaultPlugins)
         .add_systems(Startup, setup_camera)

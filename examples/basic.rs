@@ -8,7 +8,7 @@ use bevy_where_was_i::{WhereWasI, WhereWasIPlugin};
 fn main() {
     App::new()
         .add_plugins(WhereWasIPlugin {
-            directory: "./assets/saves".into(),
+            directory: "./assets/saves/basic".into(),
         })
         .add_plugins(DefaultPlugins)
         .add_systems(Startup, setup_camera)
