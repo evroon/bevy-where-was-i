@@ -17,20 +17,61 @@ Add the plugin:
 .add_plugins(WhereWasIPlugin::default())
 ```
 
+### For a camera
+
+To save the translation and rotation of a camera, add the `WhereWasI` component to an entity with a
+`Camera` component:
+
+```rust ignore
+commands.spawn((
+    Camera::default(),
+    WhereWasI::camera(),
+));
+```
+
+Note: `WhereWasI::camera()` is equivalent to `WhereWasI::from_name("camera")`.
+
+### For other entities
+
+For other entities, a name has to be provided.
 Add the `WhereWasI` component to an entity with a `Transform`:
 
 ```rust ignore
 commands.spawn((
+    PointLight::default(),
+    WhereWasI::from_name("point_light"),
+));
+```
+
+Since `WhereWasI` indicates that `Transform` is a required component, we can omit it and
+`WhereWasI` will construct it. If you want to change the initial state of the `Transform` before a
+savefile exists, add a `Transform` component to the bundle:
+
+```rust ignore
+commands.spawn((
+    PointLight::default(),
     Transform::from_xyz(5.0, 2.0, 5.0),
-    WhereWasI {
-        name: "camera".into(),
-    },
+    WhereWasI::from_name("point_light"),
 ));
 ```
 
 See the
 [3D scene example](https://github.com/evroon/bevy-where-was-i/blob/master/examples/3d_scene.rs)
-for more information.
+for a complete example.
+
+### Save files
+
+The save files will by default be stored in `./assets/saves`. You likely want to add this directory
+to you `.gitignore`. Alternatvely, you can configure a different directory when initializing
+the plugin. For example, you can store the savefiles in the user's `.config` directory:
+
+```rust ignore
+.add_plugins(WhereWasIPlugin {
+    directory: "~/.config/bevy-saves/my-game".into(),
+})
+```
+
+`WhereWasIPlugin` will make sure the directory exists if it doesn't already.
 
 ## License
 

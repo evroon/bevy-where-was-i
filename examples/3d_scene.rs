@@ -23,15 +23,12 @@ fn main() {
 fn setup_camera(mut commands: Commands<'_, '_>) {
     commands.spawn((
         Camera::default(),
-        Transform::from_xyz(10.0, 10.0, 10.0).looking_at(Vec3::ZERO, Vec3::Y),
         PanOrbitCamera {
             button_pan: MouseButton::Middle,
             button_orbit: MouseButton::Left,
             ..Default::default()
         },
-        WhereWasI {
-            name: "camera".into(),
-        },
+        WhereWasI::camera(),
     ));
 }
 

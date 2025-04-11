@@ -10,8 +10,19 @@ use serialization::{deserialize_transform, serialize_transform};
 mod serialization;
 
 #[derive(Component)]
+#[require(Transform)]
 pub struct WhereWasI {
-    pub name: String,
+    name: String,
+}
+
+impl WhereWasI {
+    pub fn from_name(name: &str) -> Self {
+        Self { name: name.into() }
+    }
+
+    pub fn camera() -> Self {
+        WhereWasI::from_name("camera")
+    }
 }
 
 #[derive(Resource)]
@@ -69,7 +80,7 @@ fn load_state(mut to_save: Query<(&WhereWasI, &mut Transform)>, config: Res<Wher
         }
     }
 
-    println!("Initialized {} transform(s)", initialized);
+    info!("Initialized {} transform(s)", initialized);
 }
 
 fn save_state(
