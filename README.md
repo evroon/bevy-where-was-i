@@ -1,4 +1,24 @@
-# Bevy, where was I?
+<h1 align="center">
+    Bevy, where was I?
+</h1>
+
+<p align="center">
+  <a href="https://github.com/evroon/bevy-where-was-i/actions"
+    ><img
+      src="https://img.shields.io/github/actions/workflow/status/evroon/bevy-where-was-i/ci.yml"
+      alt="build status"
+  /></a>
+  <a href="https://crates.io/crates/bevy_where_was_i"
+    ><img
+      src="https://img.shields.io/crates/v/bevy_where_was_i"
+      alt="crate on crates.io"
+  /></a>
+  <a href="https://docs.rs/bevy_where_was_i"
+    ><img
+      src="https://docs.rs/bevy_where_was_i/badge.svg"
+      alt="docs on docs.rs"
+  /></a>
+</p>
 
 A tiny Bevy library that saves the camera position when the program closes, and restores it when
 you launch the application again. This is useful when debugging and you don't want to continuously
@@ -75,4 +95,4 @@ the plugin. For example, you can store the savefiles in the user's `.config` dir
 
 ## License
 
-Bracket is licensed under [MIT](https://choosealicense.com/licenses/mit/), see [LICENSE](LICENSE).
+Bracket is licensed under [MIT](https://choosealicense.com/licenses/mit/), see [LICENSE](./LICENSE).
