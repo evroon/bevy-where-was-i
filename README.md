@@ -15,7 +15,7 @@
   /></a>
   <a href="https://docs.rs/bevy_where_was_i"
     ><img
-      src="https://docs.rs/bevy_where_was_i/badge.svg"
+      src="https://img.shields.io/docsrs/bevy-where-was-i"
       alt="docs on docs.rs"
   /></a>
 </p>
