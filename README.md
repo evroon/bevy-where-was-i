@@ -3,11 +3,6 @@
 </h1>
 
 <p align="center">
-  <a href="https://github.com/evroon/bevy-where-was-i/actions"
-    ><img
-      src="https://img.shields.io/github/actions/workflow/status/evroon/bevy-where-was-i/ci.yml"
-      alt="build status"
-  /></a>
   <a href="https://crates.io/crates/bevy_where_was_i"
     ><img
       src="https://img.shields.io/crates/v/bevy_where_was_i"
@@ -17,6 +12,11 @@
     ><img
       src="https://img.shields.io/docsrs/bevy-where-was-i"
       alt="docs on docs.rs"
+  /></a>
+  <a href="https://github.com/evroon/bevy-where-was-i/actions"
+    ><img
+      src="https://img.shields.io/github/actions/workflow/status/evroon/bevy-where-was-i/ci.yml"
+      alt="build status"
   /></a>
 </p>
 
