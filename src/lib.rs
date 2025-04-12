@@ -1,10 +1,6 @@
-//! # Bevy, where was I?
-//!
-//! Plugin that saves the [`Transform`] state after closing a Bevy application, and restores it
-//! when launching the application again.
-//!
-//! See the docstrings, [examples](https://github.com/evroon/bevy-where-was-i/tree/master/examples)
-//! and the [README](https://github.com/evroon/bevy-where-was-i) for more information.
+#![warn(missing_docs)]
+#![doc = include_str!("../README.md")]
+
 use std::fs;
 use std::io::{self, BufRead};
 use std::path::Path;
@@ -60,6 +56,7 @@ struct WhereWasIConfig {
 /// Plugin that saves the [`Transform`] state after closing a Bevy application, and restores it
 /// when launching the application again.
 pub struct WhereWasIPlugin {
+    /// The directory where savefiles will be stored and loaded from
     pub directory: String,
 }
 
