@@ -12,10 +12,10 @@ keywords = ["bevy", "serialization", "gamedev", "savegame", "plugin"]
 categories = ["game-development"]
 
 [dependencies]
-bevy = {version = "0.15.3", default-features = false, features = ["bevy_window"]}
+bevy = {version = "0.16.1", default-features = false, features = ["bevy_window"]}
 
 [dev-dependencies]
-bevy = {version = "0.15.3", default-features = false, features = [
+bevy = {version = "0.16.1", default-features = false, features = [
     "bevy_core_pipeline",
     "bevy_pbr",
     "bevy_window",
