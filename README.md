@@ -93,6 +93,13 @@ the plugin. For example, you can store the savefiles in the user's `.config` dir
 
 `WhereWasIPlugin` will make sure the directory exists if it doesn't already.
 
+## Bevy version compatibility
+
+| bevy | bevy-where-was-i     |
+|------|----------------------|
+| 0.16 | 0.2.*                |
+| 0.15 | 0.1.*                |
+
 ## License
 
 Bracket is licensed under [MIT](https://choosealicense.com/licenses/mit/), see [LICENSE](./LICENSE).
