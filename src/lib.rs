@@ -208,7 +208,12 @@ mod tests {
 
         app.update();
 
-        let result = app.world_mut().query::<&Transform>().single(app.world());
+        let result = app
+            .world_mut()
+            .query::<&Transform>()
+            .single(app.world())
+            .expect("`load_state` should have added a Transform to the world");
+
         const TRANSFORM: Transform = Transform {
             translation: Vec3::new(10.000002, 10.0, 10.0),
             rotation: Quat::from_xyzw(-0.27984813, 0.36470526, 0.11591691, 0.88047624),
