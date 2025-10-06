@@ -21,4 +21,4 @@ bevy = {version = "0.16.1", default-features = false, features = [
     "bevy_window",
     "bevy_render",
 ]}
-bevy_panorbit_camera = "0.28.0"
+bevy_panorbit_camera = "0.29.0"
