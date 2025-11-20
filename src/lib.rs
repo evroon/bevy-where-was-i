@@ -116,7 +116,7 @@ fn load_state(mut to_save: Query<(&WhereWasI, &mut Transform)>, config: Res<Wher
 ///
 /// Note: this doesn't work for WASM.
 fn save_state(
-    mut events: EventReader<WindowClosing>,
+    mut events: MessageReader<WindowClosing>,
     to_save: Query<(&WhereWasI, &Transform)>,
     config: Res<WhereWasIConfig>,
 ) {
@@ -177,15 +177,15 @@ mod tests {
         app.insert_resource(WhereWasIConfig {
             directory: "assets/tests".into(),
         });
-        app.add_event::<WindowClosing>();
+        app.add_message::<WindowClosing>();
         app.add_systems(Startup, setup_camera_with_transform);
         app.add_systems(Update, save_state);
 
         // Send an `WindowClosing` event
         app.world_mut()
-            .resource_mut::<Events<WindowClosing>>()
-            .send(WindowClosing {
-                window: Entity::from_raw(322),
+            .resource_mut::<Messages<WindowClosing>>()
+            .write(WindowClosing {
+                window: Entity::from_raw_u32(322).unwrap(),
             });
 
         app.update();

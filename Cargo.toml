@@ -3,7 +3,7 @@ name = "bevy-where-was-i"
 description = "A plugin for Bevy that saves and restores your camera position"
 repository = "https://github.com/evroon/bevy-where-was-i"
 readme = "README.md"
-version = "0.2.0"
+version = "0.3.0"
 publish = true
 authors = ["Erik Vroon"]
 edition = "2024"
@@ -12,13 +12,13 @@ keywords = ["bevy", "serialization", "gamedev", "savegame", "plugin"]
 categories = ["game-development"]
 
 [dependencies]
-bevy = {version = "0.16.1", default-features = false, features = ["bevy_window", "bevy_log"]}
+bevy = {version = "0.17.3", default-features = false, features = ["bevy_window", "bevy_log"]}
 
 [dev-dependencies]
-bevy = {version = "0.16.1", default-features = false, features = [
+bevy = {version = "0.17.3", default-features = false, features = [
     "bevy_core_pipeline",
     "bevy_pbr",
     "bevy_window",
     "bevy_render",
 ]}
-bevy_panorbit_camera = "0.28.0"
+bevy_panorbit_camera = "0.33.0"
