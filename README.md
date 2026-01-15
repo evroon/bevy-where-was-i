@@ -20,14 +20,17 @@
   /></a>
 </p>
 
-A tiny Bevy library that saves the camera position when the program closes, and restores it when
-you launch the application again. This is useful when debugging and you don't want to continuously
+A tiny [Bevy](https://github.com/bevyengine/bevy) library that saves the camera position when the
+program closes, and restores it when you launch the application again.
+This is useful when debugging and you don't want to continuously
 change your hardcoded camera coordinates.
 
 Note that this actually works for any `Transform` component, and not only restores translation
 information, but also scale and rotation.
 
-This crate is compatible with [bevy_panorbit_camera](https://github.com/Plonq/bevy_panorbit_camera).
+This crate is compatible with [bevy_panorbit_camera](https://github.com/Plonq/bevy_panorbit_camera)
+and with Bevy's built-in
+[camera controllers](https://docs.rs/bevy/latest/bevy/camera_controller/index.html).
 
 ## Usage
 
@@ -97,6 +100,7 @@ the plugin. For example, you can store the savefiles in the user's `.config` dir
 
 | bevy | bevy-where-was-i     |
 |------|----------------------|
+| 0.18 | 0.4.*                |
 | 0.17 | 0.3.*                |
 | 0.16 | 0.2.*                |
 | 0.15 | 0.1.*                |
